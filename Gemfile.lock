@@ -126,7 +126,6 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    high_voltage (3.0.0)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
       haml (~> 4.0.0)
@@ -340,7 +339,6 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   haml-rails
-  high_voltage
   html2haml
   jbuilder (~> 2.0)
   jquery-rails

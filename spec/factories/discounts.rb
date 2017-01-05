@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: discounts
+#
+#  id         :integer          not null, primary key
+#  code       :string
+#  type       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 FactoryGirl.define do
   factory :discount do
     code "MyString"

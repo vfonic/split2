@@ -14,7 +14,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.46.0', require: false
 end
 group :development do
   gem 'annotate'

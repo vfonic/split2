@@ -115,6 +115,8 @@ GEM
     faker (1.7.2)
       i18n (~> 0.5)
     ffi (1.9.14)
+    figaro (1.1.1)
+      thor (~> 0.14)
     formatador (0.2.5)
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
@@ -381,6 +383,7 @@ DEPENDENCIES
   devise_invitable
   factory_girl_rails
   faker
+  figaro
   guard-bundler
   guard-rails
   guard-rspec

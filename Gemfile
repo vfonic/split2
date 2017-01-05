@@ -22,6 +22,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-rubocop'
   gem 'html2haml'
   gem 'mail_view'
   gem 'mailcatcher'

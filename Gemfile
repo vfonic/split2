@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'figaro'
+gem 'liquid-rails'
 group :development, :test do
   gem 'byebug'
 end

@@ -14,7 +14,7 @@
 #
 
 class Discount < ActiveRecord::Base
-  DISCOUNT_TYPES = ['FixedAmountDiscount', 'PercentageDiscount', 'ShippingDiscount']
+  DISCOUNT_TYPES = %w(FixedAmountDiscount PercentageDiscount ShippingDiscount).freeze
 
   validates :type, inclusion: DISCOUNT_TYPES
 

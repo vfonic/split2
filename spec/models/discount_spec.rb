@@ -25,7 +25,7 @@ RSpec.describe Discount, type: :model do
   describe '::DISCOUNT_TYPES' do
     it 'returns expected items' do
       expect(Discount::DISCOUNT_TYPES).to eq(
-        ['FixedAmountDiscount', 'PercentageDiscount', 'ShippingDiscount']
+        %w(FixedAmountDiscount PercentageDiscount ShippingDiscount)
       )
     end
   end

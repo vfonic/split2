@@ -18,7 +18,6 @@ RSpec.describe ThemesController do
       end
     end
 
-
     context 'without existing active theme directory' do
       it 'renders "simple" layout' do
         theme = create(:theme)
@@ -36,9 +35,9 @@ RSpec.describe ThemesController do
         active_theme = create(:active_theme, theme: theme)
         allow(Dir).to receive(:exists?).and_return true
 
-        expect{
+        expect do
           get :index
-        }.to raise_error ActionView::MissingTemplate
+        end.to raise_error ActionView::MissingTemplate
       end
     end
   end

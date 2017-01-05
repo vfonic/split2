@@ -16,8 +16,8 @@ FactoryGirl.define do
   factory :product do
     compare_at_price_max 1
     compare_at_price_min 1
-    description "MyText"
-    title "MyString"
-    vendor "MyString"
+    description 'MyText'
+    title 'MyString'
+    vendor 'MyString'
   end
 end

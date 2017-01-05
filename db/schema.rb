@@ -11,10 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105095808) do
+ActiveRecord::Schema.define(version: 20170105145649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "billing_addresses", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "company"
+    t.string   "city"
+    t.string   "province"
+    t.string   "province_code"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "country_code"
+    t.string   "phone"
+    t.integer  "customer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "billing_addresses", ["customer_id"], name: "index_billing_addresses_on_customer_id", using: :btree
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "company"
+    t.string   "city"
+    t.string   "province"
+    t.string   "province_code"
+    t.string   "zip"
+    t.string   "country"
+    t.string   "country_code"
+    t.string   "phone"
+    t.integer  "customer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "shipping_addresses", ["customer_id"], name: "index_shipping_addresses_on_customer_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

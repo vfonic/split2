@@ -10,6 +10,6 @@
 
 FactoryGirl.define do
   factory :theme do
-    title "MyString"
+    name "MyString"
   end
 end

@@ -14,4 +14,12 @@ class Theme < ActiveRecord::Base
   def role
     active_theme ? 'main' : 'unpublished'
   end
+
+  def previewable
+    true
+  end
+
+  def processing
+    false
+  end
 end

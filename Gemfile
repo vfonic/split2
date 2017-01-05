@@ -11,7 +11,6 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
@@ -24,10 +23,8 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  gem 'html2haml'
   gem 'mail_view'
   gem 'mailcatcher'
-  gem 'rails_layout'
   gem 'rb-fchange', require: false
   gem 'rb-fsevent', require: false
   gem 'rb-inotify', require: false

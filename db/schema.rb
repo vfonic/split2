@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105171542) do
+ActiveRecord::Schema.define(version: 20170105174901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_themes", force: :cascade do |t|
+    t.integer  "theme_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "active_themes", ["theme_id"], name: "index_active_themes_on_theme_id", using: :btree
 
   create_table "billing_addresses", force: :cascade do |t|
     t.string   "first_name"
@@ -135,13 +143,10 @@ ActiveRecord::Schema.define(version: 20170105171542) do
   add_index "shipping_addresses", ["customer_id"], name: "index_shipping_addresses_on_customer_id", using: :btree
 
   create_table "themes", force: :cascade do |t|
-    t.boolean  "active",     default: false
     t.string   "title"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "themes", ["active"], name: "index_themes_on_active", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

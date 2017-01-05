@@ -1,13 +1,17 @@
 # == Schema Information
 #
-# Table name: themes
+# Table name: active_themes
 #
 #  id         :integer          not null, primary key
-#  title      :string
+#  theme_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_active_themes_on_theme_id  (theme_id)
+#
 
-class Theme < ActiveRecord::Base
-  has_one :active_theme
+class ActiveTheme < ActiveRecord::Base
+  belongs_to :theme
 end

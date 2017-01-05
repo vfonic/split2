@@ -1,6 +1,19 @@
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/production.rb
+    - '**/*_spec.rb'
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/**'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**'
+Documentation:
+  Enabled: false
+Rails:
+  Enabled: true
 AllCops:
-  Rails:
-    Enabled: true
+  DisplayCopNames: true
   Include:
     - '**/Gemfile'
     - '**/Rakefile'

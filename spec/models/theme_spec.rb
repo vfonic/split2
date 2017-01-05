@@ -12,7 +12,7 @@ RSpec.describe Theme, type: :model do
   describe 'active_theme' do
     it 'should not allow destroying of active theme' do
       theme = create(:theme)
-      active_theme = create(:active_theme, theme: theme)
+      create(:active_theme, theme: theme)
 
       theme.destroy
 
@@ -25,7 +25,7 @@ RSpec.describe Theme, type: :model do
   describe '#role' do
     it 'should have "main" role if active theme' do
       theme = create(:theme)
-      active_theme = create(:active_theme, theme: theme)
+      create(:active_theme, theme: theme)
 
       expect(theme.role).to eq('main')
     end

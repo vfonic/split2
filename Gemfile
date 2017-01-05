@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 gem 'rails', '~> 4.2.7.1'
+
 gem 'figaro'
 gem 'jquery-rails'
 gem 'liquid-rails', github: 'Seitk/liquid-rails', ref: 'a8519bf'

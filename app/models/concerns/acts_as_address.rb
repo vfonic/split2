@@ -1,4 +1,4 @@
-module Concerns::ActsAsAddress
+module ActsAsAddress
   extend ActiveSupport::Concern
 
   included do

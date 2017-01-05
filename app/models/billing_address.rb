@@ -25,6 +25,6 @@
 #
 
 class BillingAddress < ActiveRecord::Base
-  include Concerns::ActsAsAddress
-  include Concerns::ActsAsFullName
+  include ActsAsAddress
+  include ActsAsFullName
 end

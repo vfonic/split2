@@ -18,5 +18,5 @@
 #
 
 class Customer < ActiveRecord::Base
-  include Concerns::ActsAsFullName
+  include ActsAsFullName
 end

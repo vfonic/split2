@@ -1,4 +1,4 @@
-module Concerns::ActsAsFullName
+module ActsAsFullName
   extend ActiveSupport::Concern
 
   included do

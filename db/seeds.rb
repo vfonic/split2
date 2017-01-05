@@ -1,2 +1,2 @@
-theme = Theme.create!(title: 'Default', active: true)
+theme = Theme.create!(name: 'Simple')
 ActiveTheme.create!(theme: theme)

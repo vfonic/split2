@@ -9,5 +9,5 @@
 #
 
 class Theme < ActiveRecord::Base
-  has_one :active_theme
+  has_one :active_theme, dependent: :restrict_with_error
 end

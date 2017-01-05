@@ -13,8 +13,6 @@
 #  index_discounts_on_code  (code)
 #
 
-require 'rails_helper'
-
 RSpec.describe Discount, type: :model do
   describe '#title' do
     it 'returns the discount code' do

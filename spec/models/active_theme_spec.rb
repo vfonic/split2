@@ -12,7 +12,5 @@
 #  index_active_themes_on_theme_id  (theme_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe ActiveTheme, type: :model do
 end

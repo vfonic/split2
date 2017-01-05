@@ -15,5 +15,14 @@
 FactoryGirl.define do
   factory :active_theme do
     theme_id 1
+
+    before(:create) do |active_theme|
+      old_active_theme = ActiveTheme.first
+      if old_active_theme
+        theme_id = active_theme.theme_id
+        active_theme = old_active_theme
+        active_theme.theme_id = theme_id
+      end
+    end
   end
 end

@@ -8,8 +8,6 @@
 #  updated_at :datetime         not null
 #
 
-require 'rails_helper'
-
 RSpec.describe Theme, type: :model do
   describe 'active_theme' do
     it 'should not allow destroying of active theme' do

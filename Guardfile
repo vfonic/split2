@@ -28,20 +28,35 @@ guard :bundler do
 end
 
 # Guard-Rails supports a lot options with default values:
-# daemon: false                        # runs the server as a daemon.
-# debugger: false                      # enable ruby-debug gem.
-# environment: 'development'           # changes server environment.
-# force_run: false                     # kills any process that's holding the listen port before attempting to (re)start Rails.
-# pid_file: 'tmp/pids/[RAILS_ENV].pid' # specify your pid_file.
-# host: 'localhost'                    # server hostname.
-# port: 3000                           # server port number.
-# root: '/spec/dummy'                  # Rails' root path.
-# server: thin                         # webserver engine.
-# start_on_start: true                 # will start the server when starting Guard.
-# timeout: 30                          # waits untill restarting the Rails server, in seconds.
-# zeus_plan: server                    # custom plan in zeus, only works with `zeus: true`.
-# zeus: false                          # enables zeus gem.
-# CLI: 'rails server'                  # customizes runner command. Omits all options except `pid_file`!
+## runs the server as a daemon.
+# daemon: false
+## enable ruby-debug gem.
+# debugger: false
+## changes server environment.
+# environment: 'development'
+## kills any process that's holding the listen port before attempting to
+## (re)start Rails.
+# force_run: false
+## specify your pid_file.
+# pid_file: 'tmp/pids/[RAILS_ENV].pid'
+## server hostname.
+# host: 'localhost'
+## server port number.
+# port: 3000
+## Rails' root path.
+# root: '/spec/dummy'
+## webserver engine.
+# server: thin
+## will start the server when starting Guard.
+# start_on_start: true
+## waits untill restarting the Rails server, in seconds.
+# timeout: 30
+## custom plan in zeus, only works with `zeus: true`.
+# zeus_plan: server
+## enables zeus gem.
+# zeus: false
+## customizes runner command. Omits all options except `pid_file`!
+# CLI: 'rails server'
 
 guard 'rails' do
   watch('Gemfile.lock')
@@ -57,23 +72,18 @@ end
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: "bundle exec rspec" do
-  require "guard/rspec/dsl"
+guard :rspec, cmd: 'spring rspec' do
+  require 'guard/rspec/dsl'
   dsl = Guard::RSpec::Dsl.new(self)
 
-  # Feel free to open issues for suggestions and improvements
-
-  # RSpec files
   rspec = dsl.rspec
   watch(rspec.spec_helper) { rspec.spec_dir }
   watch(rspec.spec_support) { rspec.spec_dir }
   watch(rspec.spec_files)
 
-  # Ruby files
   ruby = dsl.ruby
   dsl.watch_spec_files_for(ruby.lib_files)
 
-  # Rails files
   rails = dsl.rails(view_extensions: %w(erb haml slim))
   dsl.watch_spec_files_for(rails.app_files)
   dsl.watch_spec_files_for(rails.views)
@@ -86,23 +96,15 @@ guard :rspec, cmd: "bundle exec rspec" do
     ]
   end
 
-  # Rails config changes
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
   watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
 
-  # Capybara features specs
   watch(rails.view_dirs)     { |m| rspec.spec.call("features/#{m[1]}") }
   watch(rails.layouts)       { |m| rspec.spec.call("features/#{m[1]}") }
-
-  # Turnip features and steps
-  watch(%r{^spec/acceptance/(.+)\.feature$})
-  watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$}) do |m|
-    Dir[File.join("**/#{m[1]}.feature")][0] || "spec/acceptance"
-  end
 end
 
 guard :rubocop do
-  watch(%r{.+\.rb$})
+  watch(/.+\.rb$/)
   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end

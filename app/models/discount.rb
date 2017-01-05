@@ -8,6 +8,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_discounts_on_code  (code)
+#
 
 class Discount < ActiveRecord::Base
   DISCOUNT_TYPES = ['FixedAmountDiscount', 'PercentageDiscount', 'ShippingDiscount']

@@ -11,6 +11,11 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
+# Indexes
+#
+#  index_customers_on_default_address_id  (default_address_id)
+#  index_customers_on_email               (email)
+#
 
 require 'rails_helper'
 

@@ -19,6 +19,10 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
+# Indexes
+#
+#  index_shipping_addresses_on_customer_id  (customer_id)
+#
 
 FactoryGirl.define do
   factory :shipping_address do

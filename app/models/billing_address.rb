@@ -19,6 +19,10 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
+# Indexes
+#
+#  index_billing_addresses_on_customer_id  (customer_id)
+#
 
 class BillingAddress < ActiveRecord::Base
   include Concerns::ActsAsAddress

@@ -13,4 +13,7 @@
 #
 
 class Product < ActiveRecord::Base
+  has_many :variants
+  has_many :collection_products
+  has_many :collections, through: :collection_products
 end

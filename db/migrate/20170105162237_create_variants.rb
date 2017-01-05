@@ -18,8 +18,10 @@ class CreateVariants < ActiveRecord::Migration
       t.string :title
       t.string :weight
       t.string :weight_unit
+      t.integer :product_id
 
       t.timestamps null: false
     end
+    add_index :variants, :product_id
   end
 end

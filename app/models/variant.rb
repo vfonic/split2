@@ -20,9 +20,15 @@
 #  title                :string
 #  weight               :string
 #  weight_unit          :string
+#  product_id           :integer
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
+# Indexes
+#
+#  index_variants_on_product_id  (product_id)
+#
 
 class Variant < ActiveRecord::Base
+  belongs_to :product
 end

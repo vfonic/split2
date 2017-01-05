@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105162237) do
+ActiveRecord::Schema.define(version: 20170105162628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,23 @@ ActiveRecord::Schema.define(version: 20170105162237) do
     t.integer  "total_weight"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+  end
+
+  create_table "collection_products", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "product_id"
+  end
+
+  add_index "collection_products", ["collection_id"], name: "index_collection_products_on_collection_id", using: :btree
+  add_index "collection_products", ["product_id"], name: "index_collection_products_on_product_id", using: :btree
+
+  create_table "collections", force: :cascade do |t|
+    t.string   "default_sort_by"
+    t.text     "description"
+    t.datetime "published_at"
+    t.string   "title"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "customers", force: :cascade do |t|
@@ -169,8 +186,11 @@ ActiveRecord::Schema.define(version: 20170105162237) do
     t.string   "title"
     t.string   "weight"
     t.string   "weight_unit"
+    t.integer  "product_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "variants", ["product_id"], name: "index_variants_on_product_id", using: :btree
 
 end

@@ -19,4 +19,5 @@
 
 class Customer < ActiveRecord::Base
   include ActsAsFullName
+  # liquid_methods :name, :first_name
 end

@@ -13,7 +13,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'devise_invitable'

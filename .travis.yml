@@ -1,4 +1,6 @@
-services:
-  - postgresql
 before_script:
   - psql -c 'create database split_test;' -U postgres
+script:
+  - bundle exec rubocop
+services:
+  - postgresql

@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 ruby '2.3.3'
 gem 'rails', '~> 4.2.7.1'
 
+git_source :github do |repo|
+  repo = "#{repo}/#{repo}" unless repo.include? '/'
+  "https://github.com/#{repo}.git"
+end
+
 gem 'carrierwave'
 gem 'figaro'
 gem 'jquery-rails'

@@ -40,9 +40,9 @@ group :development do
 end
 group :test do
   gem 'capybara'
+  gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
   gem 'simplecov', require: false
-  gem 'codeclimate-test-reporter', '~> 1.0.0'
 end

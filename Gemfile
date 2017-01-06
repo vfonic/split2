@@ -9,6 +9,7 @@ end
 
 gem 'carrierwave'
 gem 'figaro'
+gem 'fog-aws'
 gem 'jquery-rails'
 gem 'liquid-rails', github: 'Seitk/liquid-rails', ref: 'a8519bf'
 gem 'pg'

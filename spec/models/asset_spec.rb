@@ -20,7 +20,9 @@
 RSpec.describe Asset, type: :model do
   context '#file' do
     it 'uploads the file locally' do
-      create(:asset)
+      asset = create(:asset)
+
+      expect(asset.file?).to be true
     end
   end
 end

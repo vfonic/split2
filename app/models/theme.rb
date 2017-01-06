@@ -10,6 +10,7 @@
 
 class Theme < ActiveRecord::Base
   has_one :active_theme, dependent: :restrict_with_error
+  has_many :assets
 
   def role
     active_theme ? 'main' : 'unpublished'

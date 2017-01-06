@@ -14,6 +14,7 @@
 #
 # Indexes
 #
+#  index_assets_on_key       (key)
 #  index_assets_on_theme_id  (theme_id)
 #
 

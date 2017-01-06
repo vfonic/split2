@@ -5,7 +5,11 @@ module ActsAsAddress
     belongs_to :customer
 
     def street
-      "#{address1} #{address2}".strip
+      if address1.present? && address2.present?
+        "#{address1}, #{address2}"
+      else
+        address1 || address2 || ''
+      end
     end
   end
 end

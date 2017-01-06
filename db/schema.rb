@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105181043) do
+ActiveRecord::Schema.define(version: 20170106102846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20170105181043) do
   end
 
   add_index "active_themes", ["theme_id"], name: "index_active_themes_on_theme_id", using: :btree
+
+  create_table "assets", force: :cascade do |t|
+    t.integer  "theme_id"
+    t.string   "content_type"
+    t.string   "public_url"
+    t.integer  "size"
+    t.string   "key"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "file"
+  end
+
+  add_index "assets", ["theme_id"], name: "index_assets_on_theme_id", using: :btree
 
   create_table "billing_addresses", force: :cascade do |t|
     t.string   "first_name"

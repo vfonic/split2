@@ -17,8 +17,10 @@
 #  index_assets_on_theme_id  (theme_id)
 #
 
-require 'rails_helper'
-
 RSpec.describe Asset, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context '#file' do
+    it 'uploads the file locally' do
+      create(:asset)
+    end
+  end
 end

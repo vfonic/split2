@@ -24,5 +24,12 @@ FactoryGirl.define do
     public_url 'MyString'
     size 1
     key 'MyString'
+    file do
+      Rack::Test::UploadedFile.new(
+        File.join(
+          Rails.root, 'spec', 'data', 'simple.liquid'
+        )
+      )
+    end
   end
 end

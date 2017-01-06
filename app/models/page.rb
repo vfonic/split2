@@ -18,4 +18,7 @@
 #
 
 class Page < ActiveRecord::Base
+  def url
+    "/pages/#{handle}"
+  end
 end

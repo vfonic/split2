@@ -8,4 +8,5 @@
 Rails.application.routes.draw do
   root to: 'themes#index'
   mount MailPreview => 'mail_view' if Rails.env.development?
+  get 'pages/:handle', to: 'pages#show', as: :page
 end

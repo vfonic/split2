@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106122416) do
+ActiveRecord::Schema.define(version: 20170106192224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -125,6 +125,19 @@ ActiveRecord::Schema.define(version: 20170106122416) do
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
   add_index "orders", ["order_number"], name: "index_orders_on_order_number", using: :btree
   add_index "orders", ["shipping_address_id"], name: "index_orders_on_shipping_address_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "author"
+    t.string   "title"
+    t.string   "handle"
+    t.text     "body_html"
+    t.datetime "published_at"
+    t.string   "template_suffix"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "pages", ["handle"], name: "index_pages_on_handle", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.integer  "compare_at_price_max"

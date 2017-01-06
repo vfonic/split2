@@ -1,6 +1,8 @@
 module UrlFilters
-  def asset_url(asset_name, value = '')
-    "#{asset_name}+#{value}"
+  include ApplicationHelper
+
+  def asset_url(asset_name)
+    asset_url_for_key("assets/#{asset_name}").file.path
   end
 
   def stylesheet_tag(stylesheet_path)

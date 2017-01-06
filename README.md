@@ -1,6 +1,8 @@
 Split
 ================
 
+[![git.legal](https://git.legal/projects/3421/badge.svg?key=d858c2d06adb2214a676 "Number of libraries approved")](https://git.legal/projects/3421)
+
 Ruby on Rails
 -------------
 

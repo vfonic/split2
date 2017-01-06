@@ -74,6 +74,8 @@ GEM
       mime-types (>= 1.16)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    codeclimate-test-reporter (1.0.4)
+      simplecov
     coderay (1.1.1)
     concurrent-ruby (1.0.4)
     daemons (1.2.4)
@@ -310,6 +312,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave
+  codeclimate-test-reporter (~> 1.0.0)
   database_cleaner
   factory_girl_rails
   figaro

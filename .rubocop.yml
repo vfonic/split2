@@ -1,17 +1,3 @@
-Metrics/BlockLength:
-  Exclude:
-    - config/environments/production.rb
-    - '**/*_spec.rb'
-Metrics/AbcSize:
-  Exclude:
-    - 'db/migrate/**'
-Metrics/MethodLength:
-  Exclude:
-    - 'db/migrate/**'
-Documentation:
-  Enabled: false
-Rails:
-  Enabled: true
 AllCops:
   DisplayCopNames: true
   Include:
@@ -22,3 +8,19 @@ AllCops:
    - 'bin/*'
    - 'db/schema.rb'
    - 'vendor/bundle/**/*'
+Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/**'
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/production.rb
+    - '**/*_spec.rb'
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/**'
+Rails:
+  Enabled: true

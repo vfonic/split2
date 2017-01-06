@@ -1,6 +1,11 @@
+cache: bundler
 before_script:
   - psql -c 'create database split_test;' -U postgres
+language: ruby
+rvm:
+  - 2.3.3
 script:
   - bundle exec rubocop
 services:
   - postgresql
+sudo: false

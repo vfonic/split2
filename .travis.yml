@@ -1,12 +1,11 @@
-sudo: false
-language: ruby
 cache: bundler
 before_script:
   - psql -c 'create database split_test;' -U postgres
-rvm:
-  - 2.3.1
+language: ruby
+rvm: 2.3.3
 script:
   - bundle exec rubocop
   - bundle exec rspec
 services:
   - postgresql
+sudo: false

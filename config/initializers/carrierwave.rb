@@ -12,7 +12,8 @@ CarrierWave.configure do |config|
     config.fog_directory = ENV['AWS_S3_BUCKET_NAME']
     config.fog_authenticated_url_expiration = 120
     # config.fog_public     = true
-    # config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" } # optional, defaults to {}
+    # optional, defaults to {}
+    # config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
     config.storage = :fog
   else
     config.ignore_integrity_errors = false

@@ -20,9 +20,9 @@
 FactoryGirl.define do
   factory :asset do
     theme_id 1
-    content_type "MyString"
-    public_url "MyString"
+    content_type 'MyString'
+    public_url 'MyString'
     size 1
-    key "MyString"
+    key 'MyString'
   end
 end

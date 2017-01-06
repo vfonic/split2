@@ -1,3 +1,6 @@
+addons:
+  code_climate:
+    repo_token: 6626ce49e7c2f255512c031718e93b7facda0b9c4c34b526d0deaaa97d70271f
 cache: bundler
 before_script:
   - psql -c 'create database split_test;' -U postgres

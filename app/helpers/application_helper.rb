@@ -12,6 +12,7 @@ module ApplicationHelper
   end
 
   def controller_action_to_asset_key(record)
+    # TODO: fallback to default template when template_suffix template missing
     template_suffix = record.try(:template_suffix)
 
     controller_action = "#{controller_name}##{action_name}"

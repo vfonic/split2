@@ -12,6 +12,7 @@ class LiquidController < ApplicationController
   end
 
   def theme_layout_file
+    # TODO: cache active theme
     "../themes/#{ActiveTheme.first.theme_id}/layout/theme"
   end
 end

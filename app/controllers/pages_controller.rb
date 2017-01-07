@@ -6,7 +6,13 @@ class PagesController < LiquidController
   end
 
   def liquid_assigns
-    super.deep_merge({ 'page' => @page })
+    # merge example:
+    # { nested: { one: 1 } }.merge({ nested: { two: 2 } })
+    # => { nested: { two: 2 } }
+    # deep_merge example:
+    # { nested: { one: 1 } }.merge({ nested: { two: 2 } })
+    # => { nested: { one: 1, two: 2 } }
+    super.merge({ 'page' => @page })
   end
 
   private

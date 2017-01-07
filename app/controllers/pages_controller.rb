@@ -1,10 +1,12 @@
-class PagesController < ThemesController
+class PagesController < LiquidController
   before_action :find_page
 
-  def show; end
+  def show
+    render "#{theme_dir}/#{controller_action_to_asset_key(@page)}"
+  end
 
   def liquid_assigns
-    { 'page' => @page }
+    super.deep_merge({ 'page' => @page })
   end
 
   private

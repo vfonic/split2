@@ -1,9 +1,7 @@
 class PagesController < ThemesController
   before_action :find_page
 
-  def show
-    render "#{theme_dir}/#{controller_action_to_asset_key(@page)}"
-  end
+  def show; end
 
   def liquid_assigns
     { 'page' => @page }

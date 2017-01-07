@@ -13,8 +13,13 @@ gem 'fog-aws'
 gem 'jquery-rails'
 gem 'liquid-rails', github: 'Seitk/liquid-rails', ref: 'a8519bf'
 gem 'pg'
+gem 'rack-timeout'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+group :production do
+  gem 'puma'
+  gem 'rails_12factor'
+end
 group :development, :test do
   gem 'byebug'
   gem 'factory_girl_rails'

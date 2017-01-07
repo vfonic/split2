@@ -12,10 +12,11 @@ class PagesController < LiquidController
     # deep_merge example:
     # { nested: { one: 1 } }.merge({ nested: { two: 2 } })
     # => { nested: { one: 1, two: 2 } }
-    super.merge({ 'page' => @page })
+    super.merge('page' => @page)
   end
 
   private
+
   def find_page
     @page = Page.find_by(handle: params[:handle])
   end

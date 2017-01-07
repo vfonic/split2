@@ -20,8 +20,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {% comment %}{% include 'open-graph-tags' %}{% endcomment %}
-  {% comment %}{% include 'twitter-card' %}{% endcomment %}
+  {% include 'open-graph-tags' %}
+  {% include 'twitter-card' %}
 
   {{ content_for_header }}
 
@@ -57,7 +57,7 @@
     <header class="row">
 
       <div class="social-links half column left-aligned">
-      {% comment %}{% include 'social-links' %}{% endcomment %}
+      {% include 'social-links' %}
       </div>
 
       {% comment %}
@@ -122,7 +122,7 @@
         {% comment %}
           Main Navigation
         {% endcomment %}
-        {% comment %}{% include 'site-nav' %}{% endcomment %}
+        {% include 'site-nav' %}
 
         {% comment %}
           IE8 and IE9 don't support the HTML5 placeholder attribute, so it's a good idea to use JavaScript

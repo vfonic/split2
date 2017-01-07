@@ -1,7 +1,11 @@
 class ThemesController < LiquidController
-  DEFAULT_THEME_NAME = 'simple'.freeze
+  # DEFAULT_THEME_NAME = 'simple'.freeze
 
-  # layout :theme_path
+  layout :theme_layout_file
+
+  def theme_layout_file
+    "../themes/#{ActiveTheme.first.theme_id}/layout/theme"
+  end
 
   def index
     template = Liquid::Template.parse(layout_theme_asset.file.read)

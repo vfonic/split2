@@ -24,6 +24,6 @@ module ApplicationHelper
         { template_suffix: '' }
     )
 
-    template_path
+    "#{theme_dir}/#{template_path}"
   end
 end

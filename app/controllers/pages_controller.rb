@@ -2,7 +2,7 @@ class PagesController < LiquidController
   before_action :find_page
 
   def show
-    render "#{theme_dir}/#{controller_action_to_liquid_file_path(@page)}"
+    render controller_action_to_liquid_file_path(@page)
   end
 
   def liquid_assigns

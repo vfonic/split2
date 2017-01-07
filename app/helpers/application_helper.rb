@@ -1,5 +1,5 @@
 module ApplicationHelper
-  CONTROLLER_ACTION_TO_ASSET_KEY_MAPPING = {
+  CONTROLLER_ACTION_TO_LIQUID_MAPPING = {
     'pages#show' => 'templates/page%{template_suffix}.liquid'
   }
 
@@ -11,12 +11,12 @@ module ApplicationHelper
     @theme_dir ||= "themes/#{theme.id}"
   end
 
-  def controller_action_to_asset_key(record)
+  def controller_action_to_liquid_file_path(record)
     # TODO: fallback to default template when template_suffix template missing
     template_suffix = record.try(:template_suffix)
 
     controller_action = "#{controller_name}##{action_name}"
-    template_format = CONTROLLER_ACTION_TO_ASSET_KEY_MAPPING[controller_action]
+    template_format = CONTROLLER_ACTION_TO_LIQUID_MAPPING[controller_action]
 
     template_path = template_format % (
       template_suffix.present? ?
